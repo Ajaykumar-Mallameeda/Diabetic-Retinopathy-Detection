@@ -1,226 +1,199 @@
-# 🩺 AI-Assisted Diabetic Retinopathy Detection System
+# Diabetic Retinopathy Detection
 
-A deep learning–based medical imaging platform for automated diabetic retinopathy detection using computer vision, retinal image preprocessing, and AI-driven disease classification workflows.
+A machine learning project exploring automated detection of diabetic retinopathy from retinal fundus images. Demonstrates classical ML and deep learning approaches for medical image classification.
 
----
+## 🎯 Project Overview
 
-# 📌 Overview
+Diabetic retinopathy is a leading cause of blindness worldwide. This project explores automated detection using computer vision and machine learning techniques, implementing two distinct approaches:
 
-The **AI-Assisted Diabetic Retinopathy Detection System** is a healthcare-focused computer vision project designed to assist in early diabetic retinopathy screening through automated retinal image analysis.
+- **Classical ML Pipeline**: Traditional image processing with SVM/KNN classifiers
+- **Deep Learning Pipeline**: CNN architectures with transfer learning
 
-The system leverages:
+## 📁 Project Structure
 
-* Deep learning–based image classification
-* Medical image preprocessing
-* Retinal feature extraction
-* AI-assisted diagnosis workflows
-* Automated severity prediction
-
-The platform demonstrates how AI and medical imaging can support scalable and accessible ophthalmology screening systems.
-
----
-
-# 🏗️ System Architecture
-
-## High-Level Workflow
-
-```text
-Retinal Fundus Image
-        ↓
-Image Preprocessing
-        ↓
-Noise Reduction & Enhancement
-        ↓
-Feature Extraction
-        ↓
-Deep Learning Classification
-        ↓
-Retinopathy Severity Prediction
-        ↓
-Diagnostic Output
 ```
-
----
-
-# ⚙️ Core Features
-
-## 🧠 AI-Based Disease Detection
-
-* Automated diabetic retinopathy classification
-* Deep learning–based retinal analysis
-* Image-driven disease prediction
-* AI-assisted medical screening
-
-## 👁️ Medical Image Processing
-
-* Retinal image enhancement
-* Noise reduction workflows
-* Feature extraction pipelines
-* Image normalization techniques
-
-## 📊 Classification Workflow
-
-* Disease severity prediction
-* Automated inference pipeline
-* Model-based diagnostic assistance
-* Medical image analytics
-
----
-
-# 🧩 Repository Structure
-
-```text
-Diabetic-retinopathy-detection/
+Diabetic-Retinopathy-Detection/
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── .gitignore
 │
-├── Diabetic_retinopathy_detection.ipynb
-├── DR.ipynb
-└── README.md
+├── notebooks/                    # Jupyter notebooks for experiments
+│   ├── 01_exploratory_analysis.ipynb
+│   ├── 02_classical_preprocessing.ipynb
+│   ├── 03_classical_training.ipynb
+│   ├── 04_deep_learning_pipeline.ipynb
+│   └── 05_model_interpretation.ipynb
+│
+├── src/                         # Source code modules
+│   ├── preprocessing/          # Image preprocessing utilities
+│   ├── models/                 # ML/DL model definitions
+│   ├── data/                   # Data loading utilities
+│   └── utils/                  # Helper functions
+│
+├── assets/                      # Generated assets
+│   ├── architecture/           # Architecture diagrams
+│   └── screenshots/           # Result visualizations
+│
+├── docs/                       # Additional documentation
+├── models/                     # Trained model files
+└── data/                       # Dataset files
 ```
 
----
+## 🚀 Quick Start
 
-# 🧠 Detection Pipeline
-
-## 1. Retinal Image Acquisition
-
-The system processes retinal fundus images for automated ophthalmic analysis.
-
----
-
-## 2. Image Preprocessing
-
-Preprocessing workflows improve image quality using:
-
-* Normalization
-* Noise reduction
-* Contrast enhancement
-* Retinal feature emphasis
-
----
-
-## 3. AI-Based Classification
-
-The processed images are passed through a deep learning model to predict:
-
-* Presence of diabetic retinopathy
-* Severity level
-* Diagnostic category
-
----
-
-# 🧪 Technologies Used
-
-## AI & Deep Learning
-
-* Python
-* TensorFlow / Keras
-* Deep Learning
-* CNN-based Classification
-
-## Computer Vision
-
-* OpenCV
-* Medical Image Processing
-* Retinal Feature Extraction
-
-## Data Science
-
-* NumPy
-* Pandas
-* Matplotlib
-
----
-
-# 📂 Important Files
-
-## `Diabetic_retinopathy_detection.ipynb`
-
-Primary notebook containing preprocessing, training, and inference workflows.
-
-## `DR.ipynb`
-
-Experimental notebook for diabetic retinopathy analysis and model evaluation.
-
----
-
-# 🚀 Setup & Installation
-
-## Clone Repository
+### Installation
 
 ```bash
-git clone https://github.com/your-username/Diabetic-retinopathy-detection.git
-cd Diabetic-retinopathy-detection
+# Clone the repository
+git clone <repository-url>
+cd Diabetic-Retinopathy-Detection
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
----
+### Setup Configuration
 
-## Install Dependencies
+Update the dataset paths in `src/utils/config.py` or create a local config:
 
-```bash
-pip install tensorflow keras opencv-python numpy pandas matplotlib
+```python
+from src.utils.config import Config
+
+Config.update_config({
+    'DATASET_PATHS': {
+        'diaretdb1': 'path/to/diaretdb1/images',
+        'idrid_train': 'path/to/idrid/train',
+        'idrid_test': 'path/to/idrid/test',
+        'idrid_labels': 'path/to/idrid/labels.csv'
+    }
+})
 ```
 
----
-
-## Run Notebook
+### Run Notebooks
 
 ```bash
 jupyter notebook
 ```
 
-Open:
+Start with `01_exploratory_analysis.ipynb` to understand the datasets and follow the notebooks in order.
 
-* `Diabetic_retinopathy_detection.ipynb`
-* `DR.ipynb`
+## 🧠 Methods
 
----
+### Classical ML Approach
 
-# 📊 Model Objectives
+1. **Preprocessing Pipeline**:
+   - Grayscale conversion
+   - Adaptive histogram equalization
+   - Discrete Wavelet Transform (Haar)
+   - Gaussian matched filtering
+   - Gabor filter banks
+   - K-means segmentation
 
-The system is designed to assist with:
+2. **Models**:
+   - SVM with RBF kernel
+   - K-Nearest Neighbors
 
-* Early disease screening
-* Automated retinal analysis
-* AI-assisted ophthalmology workflows
-* Medical image classification
-* Healthcare accessibility
+### Deep Learning Approach
 
----
+1. **Architecture**:
+   - Custom CNN with 3 convolutional layers
+   - MobileNetV2 with transfer learning
+   - Data augmentation for robustness
 
-# 📈 Engineering Focus
+2. **Training**:
+   - Adam optimizer with fixed learning rate
+   - Sparse categorical cross-entropy loss
+   - Basic training loop implementation
 
-This project explores:
+## 📊 Results
 
-* AI in healthcare
-* Medical computer vision
-* Deep learning for diagnostics
-* Automated disease detection
-* Medical imaging systems
-* AI-assisted clinical workflows
+The original notebooks report:
+- SVM (Classical): ~96% accuracy on DIARETDB1 dataset
+- KNN (Classical): ~94% accuracy on DIARETDB1 dataset
+- MobileNetV2: Training in progress
 
----
+*Note: Results from single dataset experiments. Not independently validated.*
 
-# 🛠️ Future Improvements
+## 🔬 Model Analysis
 
-Potential future enhancements:
+- **Classical ML**: Support vector analysis for feature understanding
+- **Deep Learning**: Grad-CAM implementation for attention visualization
+- **Error Patterns**: Manual analysis of misclassifications
+- **Confidence**: Basic prediction confidence scoring
 
-* Multi-class severity grading
-* Real-time inference API
-* Cloud-hosted diagnosis platform
-* Explainable AI visualizations
-* Attention-based CNN architectures
-* Clinical dashboard integration
-* RAG-assisted clinical recommendations
+## 📈 Visualizations
 
----
+Example visualizations included:
 
-# 👨‍💻 Author
+- Preprocessing pipeline demonstration
+- Dataset samples showing severity levels
+- Example training curves
+- Example confusion matrices
 
-Ajay Kumar Mallameeda
+See `assets/screenshots/` for demonstration images.
+
+## 🛠️ Technologies Used
+
+- **Python 3.8+**
+- **Machine Learning**: scikit-learn, TensorFlow 2.x
+- **Computer Vision**: OpenCV, scikit-image
+- **Image Processing**: PyWavelets, Pillow
+- **Visualization**: Matplotlib, Seaborn
+
+## 📚 Dataset Information
+
+### DIARETDB1
+- 89 fundus images
+- Binary classification (DR/No DR)
+- High resolution (1152x1500)
+
+### IDRiD
+- 540+ fundus images
+- 5-level severity grading
+- Lower resolution (356x536)
+
+## 🔧 Development Notes
+
+### Code Organization
+- Modular design with clear separation of concerns
+- Reusable preprocessing pipeline
+- Configurable parameters through centralized config
+- Type hints for better code clarity
+
+### Best Practices
+- Data validation and path checking
+- Clear error messages for missing datasets
+- Basic model weight persistence
+- Fixed random seeds where applicable
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- DIARETDB1 dataset providers
+- IDRiD dataset organizers
+- Open source computer vision community
+
+## 📈 Future Improvements
+
+- [ ] Ensemble methods for better performance
+- [ ] Attention mechanisms for interpretability
+- [ ] Multi-scale feature fusion
+- [ ] Cross-dataset validation
+- [ ] Real-time inference optimization
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## 📧 Contact
+
+Ajay Kumar Mallameeda  
 Indian Institute of Technology Palakkad
 
 ---
 
-# 📜 License
-
-This project is intended for academic and research exploration purposes.
+**Note**: This project is for educational and research purposes. Not intended for clinical use.
