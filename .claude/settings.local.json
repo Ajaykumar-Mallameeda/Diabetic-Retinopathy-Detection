@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(dir E:\\\\Downloads\\\\Diabetic retinopathy detection-20260518T143711Z-3-001\\\\Diabetic retinopathy detection\\\\Diabetic-Retinopathy-Detection *)",
-      "Bash(python generate_architecture.py)"
-    ]
-  }
-}
