@@ -9,6 +9,9 @@ Diabetic retinopathy is a leading cause of blindness worldwide. This project exp
 - **Classical ML Pipeline**: Traditional image processing with SVM/KNN classifiers
 - **Deep Learning Pipeline**: CNN architectures with transfer learning
 
+- <img width="2085" height="1502" alt="overall_architecture" src="https://github.com/user-attachments/assets/cca35ae2-62f1-4349-bfc5-1ccce3c13234" />
+
+
 ## 📁 Project Structure
 
 ```
@@ -132,6 +135,8 @@ Example visualizations included:
 - Example confusion matrices
 
 See `assets/screenshots/` for demonstration images.
+<img width="1784" height="581" alt="training_curves_example" src="https://github.com/user-attachments/assets/c732d1b9-56e6-4260-bd97-2a29f1cdfa30" />
+
 
 ## 🛠️ Technologies Used
 
